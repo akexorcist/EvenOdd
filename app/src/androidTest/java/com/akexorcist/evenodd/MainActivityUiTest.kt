@@ -15,7 +15,7 @@ class MainActivityUiTest {
     val rule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun shouldEvenResultWithIndigoTextColorWhenTextIsEvenNumber() {
+    fun shouldEvenResultWithIndigoTextColorWhenTextIsPositiveEvenNumber() {
         onScreen<MainScreen> {
             editTextInput {
                 hasEmptyText()
@@ -31,11 +31,43 @@ class MainActivityUiTest {
     }
 
     @Test
-    fun shouldOddResultWithIndigoTextColorWhenTextIsOddNumber() {
+    fun shouldEvenResultWithIndigoTextColorWhenTextIsNegativeEvenNumber() {
+        onScreen<MainScreen> {
+            editTextInput {
+                hasEmptyText()
+                typeText("-12")
+            }
+            textViewPrefixResult.isDisplayed()
+            textViewResult {
+                isDisplayed()
+                hasText("even")
+                hasTextColor(R.color.indigo_400)
+            }
+        }
+    }
+
+    @Test
+    fun shouldOddResultWithIndigoTextColorWhenTextIsPositiveOddNumber() {
         onScreen<MainScreen> {
             editTextInput {
                 hasEmptyText()
                 typeText("31")
+            }
+            textViewPrefixResult.isDisplayed()
+            textViewResult {
+                isDisplayed()
+                hasText("odd")
+                hasTextColor(R.color.pink_400)
+            }
+        }
+    }
+
+    @Test
+    fun shouldOddResultWithIndigoTextColorWhenTextIsNegativeOddNumber() {
+        onScreen<MainScreen> {
+            editTextInput {
+                hasEmptyText()
+                typeText("-31")
             }
             textViewPrefixResult.isDisplayed()
             textViewResult {
