@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Even Odd</string>
+    <string name="number_hint">What\'s number?</string>
+    <string name="is">is</string>
+    <string name="even">even</string>
+    <string name="odd">odd</string>
+</resources>

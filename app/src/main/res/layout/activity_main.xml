@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/amber_400"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextInput"
+        style="@style/Text.Input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@null"
+        android:hint="@string/number_hint"
+        android:inputType="numberSigned"
+        android:maxLength="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewShadowInput"
+        style="@style/Text.ShadowInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/number_hint"
+        app:layout_constraintBottom_toBottomOf="@id/editTextInput"
+        app:layout_constraintStart_toStartOf="@id/editTextInput"
+        app:layout_constraintTop_toTopOf="@id/editTextInput" />
+
+    <TextView
+        android:id="@+id/textViewPrefixResult"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/is"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/editTextInput"
+        app:layout_constraintStart_toEndOf="@id/textViewShadowInput"
+        app:layout_constraintTop_toTopOf="@id/editTextInput" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        style="@style/Text.Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/editTextInput"
+        app:layout_constraintStart_toEndOf="@id/textViewPrefixResult"
+        app:layout_constraintTop_toTopOf="@id/editTextInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
